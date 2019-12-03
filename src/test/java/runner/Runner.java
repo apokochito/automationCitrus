@@ -1,5 +1,7 @@
 package runner;
 
+import cucumber.api.CucumberOptions;
+import cucumber.api.junit.Cucumber;
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
@@ -9,7 +11,7 @@ import org.junit.runner.RunWith;
         plugin = {"pretty", "html:target/cucumber-reports","json:target/cucumber.json"},
         glue = {"com.consol.citrus.cucumber.step.designer"},
         snippets = CucumberOptions.SnippetType.CAMELCASE,
-        tags = {"@General"}
+        tags = {"@Test"}
 )
 public class Runner {
 }
