@@ -15,6 +15,8 @@
     <properties>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <targetJdk>1.8</targetJdk>
+        <cucumber.version>1.2.5</cucumber.version>
+        <citrus.version>2.6.2</citrus.version>
     </properties>
 
     <dependencies>
@@ -22,44 +24,44 @@
         <dependency>
             <groupId>info.cukes</groupId>
             <artifactId>cucumber-core</artifactId>
-            <version>1.2.5</version>
+            <version>${cucumber.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>info.cukes</groupId>
             <artifactId>cucumber-java</artifactId>
-            <version>4.4.0</version>
+            <version>${cucumber.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>io.cucumber</groupId>
+            <groupId>info.cukes</groupId>
             <artifactId>cucumber-junit</artifactId>
-            <version>4.4.0</version>
+            <version>${cucumber.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>io.cucumber</groupId>
+            <groupId>info.cukes</groupId>
             <artifactId>cucumber-spring</artifactId>
-            <version>4.8.0</version>
+            <version>${cucumber.version}</version>
         </dependency>
 
         <!-- Citrus -->
         <dependency>
             <groupId>com.consol.citrus</groupId>
             <artifactId>citrus-core</artifactId>
-            <version>2.8.0</version>
+            <version>${citrus.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>com.consol.citrus</groupId>
             <artifactId>citrus-http</artifactId>
-            <version>2.8.0</version>
+            <version>${citrus.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>com.consol.citrus</groupId>
             <artifactId>citrus-cucumber</artifactId>
-            <version>2.8.0</version>
+            <version>${citrus.version}</version>
             <scope>test</scope>
         </dependency>
 
@@ -149,10 +151,6 @@
                 <groupId>com.consol.citrus.mvn</groupId>
                 <artifactId>citrus-maven-plugin</artifactId>
                 <version>2.8.0</version>
-                <configuration>
-                    <author>Demo</author>
-                    <targetPackage>com.consol.citrus</targetPackage>
-                </configuration>
             </plugin>
 
             <plugin>
@@ -175,19 +173,6 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.19.1</version>
                 <configuration>
-                    <SystemPropertyVariables>
-                        <jacoco-agent.destfile>target/jacoco.exec</jacoco-agent.destfile>
-                    </SystemPropertyVariables>
-                    <SystemProperties>
-                        <property>
-                            <name>javax.xml.parsers.SAXParserFactory</name>
-                            <value>org.apache.xerces.jaxp.SAXParserFactoryImpl</value>
-                        </property>
-                        <property>
-                            <name>user.language</name>
-                            <value>en</value>
-                        </property>
-                    </SystemProperties>
                     <forkMode>once</forkMode>
                     <failIfNoTests>false</failIfNoTests>
                     <excludes>
