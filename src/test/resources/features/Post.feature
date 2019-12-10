@@ -9,7 +9,7 @@ Feature: LoginFeature
 	And <response> header citrus_request_path is "http://www.executeautomation.com/demosite/Login.html"
 	And <response> payload is
     """
-    <!doctype html>
+<!doctype html>
 <html lang=''>
 
 <head>
