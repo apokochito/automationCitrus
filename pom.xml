@@ -16,7 +16,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <targetJdk>1.8</targetJdk>
         <cucumber.version>1.2.5</cucumber.version>
-        <citrus.version>2.6.2</citrus.version>
+        <citrus.version>2.7</citrus.version>
     </properties>
 
     <dependencies>
@@ -98,6 +98,11 @@
             <groupId>net.masterthought</groupId>
             <artifactId>cucumber-reporting</artifactId>
             <version>4.11.2</version>
+        </dependency>
+        <dependency>
+            <groupId>net.sf.jtidy</groupId>
+            <artifactId>jtidy</artifactId>
+            <version>r938</version>
         </dependency>
     </dependencies>
 
