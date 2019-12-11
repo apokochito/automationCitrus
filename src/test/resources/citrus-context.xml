@@ -19,12 +19,12 @@
         system-properties-mode="FALLBACK" />
 
     <citrus-http:client id="client"
-                        request-url="http://www.executeautomation.com/demosite/Login.html"
-                        request-method="GET"
+                        request-url="http://www.executeautomation.com/"
                         content-type="text/html"
-                        timeout="60000"/>
+                        timeout="5000"/>
 
     <context:annotation-config/>
+
     <!-- JavaConfig bean post-processor -->
     <bean class="org.springframework.context.annotation.ConfigurationClassPostProcessor"/>
 
