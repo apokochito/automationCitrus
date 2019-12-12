@@ -11,13 +11,6 @@
         http://www.citrusframework.org/schema/config http://www.citrusframework.org/schema/config/citrus-config.xsd
         http://www.citrusframework.org/schema/http/config http://www.citrusframework.org/schema/http/config/citrus-http-config.xsd">
 
-    <citrus:namespace-context>
-        <citrus:namespace prefix="xh"
-                          uri="http://www.w3.org/1999/xhtml"/>
-    </citrus:namespace-context>
-
-    <context:property-placeholder
-            system-properties-mode="FALLBACK"/>
     <util:list id="clientInterceptor" />
 
     <citrus-http:client id="client"
@@ -25,18 +18,6 @@
                         content-type="text/html"
                         request-method="GET"
                         interceptors="clientInterceptor"
-                        timeout="60000"
-                        error-strategy="throwsException" />
+></citrus-http:client>
 
-    <context:annotation-config/>
-
-    <!-- JavaConfig bean post-processor -->
-    <bean class="org.springframework.context.annotation.ConfigurationClassPostProcessor"/>
-
-    <!-- Citrus Java config -->
-    <bean id="" class="com.consol.citrus.config.CitrusSpringConfig"/>
-
-    <bean id="customHttpConnectionFactory"
-          class="config.customHttpConnectionFactory"
-    />
 </beans>
