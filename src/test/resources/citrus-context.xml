@@ -18,10 +18,7 @@
 
     <context:property-placeholder
             system-properties-mode="FALLBACK"/>
-    <util:list id="clientInterceptor">
-        <bean class="config.RestClientInterceptor">
-        </bean>
-    </util:list>
+    <util:list id="clientInterceptor" />
 
     <citrus-http:client id="client"
                         request-url="http://www.executeautomation.com/"
