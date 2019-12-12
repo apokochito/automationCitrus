@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:util="http://www.springframework.org/schema/util" xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:context="http://www.springframework.org/schema/context"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:citrus="http://www.citrusframework.org/schema/config"
        xmlns:citrus-http="http://www.citrusframework.org/schema/http/config"
        xsi:schemaLocation="
@@ -12,16 +13,23 @@
 
     <citrus:namespace-context>
         <citrus:namespace prefix="xh"
-                          uri="http://www.w3.org/1999/xhtml" />
+                          uri="http://www.w3.org/1999/xhtml"/>
     </citrus:namespace-context>
 
     <context:property-placeholder
-        system-properties-mode="FALLBACK" />
+            system-properties-mode="FALLBACK"/>
+    <util:list id="clientInterceptor">
+        <bean class="config.RestClientInterceptor">
+        </bean>
+    </util:list>
 
     <citrus-http:client id="client"
                         request-url="http://www.executeautomation.com/"
                         content-type="text/html"
-                        timeout="5000"/>
+                        request-method="GET"
+                        interceptors="clientInterceptor"
+                        timeout="60000"
+                        error-strategy="throwsException" />
 
     <context:annotation-config/>
 
@@ -30,4 +38,8 @@
 
     <!-- Citrus Java config -->
     <bean id="" class="com.consol.citrus.config.CitrusSpringConfig"/>
+
+    <bean id="customHttpConnectionFactory"
+          class="config.customHttpConnectionFactory"
+    />
 </beans>
