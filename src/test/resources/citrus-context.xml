@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:util="http://www.springframework.org/schema/util"
-       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util" xmlns:context="http://www.springframework.org/schema/context"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:citrus="http://www.citrusframework.org/schema/config"
        xmlns:citrus-http="http://www.citrusframework.org/schema/http/config"
        xsi:schemaLocation="
@@ -11,13 +10,24 @@
         http://www.citrusframework.org/schema/config http://www.citrusframework.org/schema/config/citrus-config.xsd
         http://www.citrusframework.org/schema/http/config http://www.citrusframework.org/schema/http/config/citrus-http-config.xsd">
 
-    <util:list id="clientInterceptor" />
+    <citrus:namespace-context>
+        <citrus:namespace prefix="xh"
+                          uri="http://www.w3.org/1999/xhtml" />
+    </citrus:namespace-context>
+
+    <context:property-placeholder
+            system-properties-mode="FALLBACK" />
 
     <citrus-http:client id="client"
-                        request-url="http://www.executeautomation.com/"
-                        content-type="text/html"
+                        request-url="http://www.executeautomation.com/demosite/Login.html"
                         request-method="GET"
-                        interceptors="clientInterceptor"
-></citrus-http:client>
+                        content-type="text/html"
+                        timeout="60000"/>
 
+    <context:annotation-config/>
+    <!-- JavaConfig bean post-processor -->
+    <bean class="org.springframework.context.annotation.ConfigurationClassPostProcessor"/>
+
+    <!-- Citrus Java config -->
+    <bean id="" class="com.consol.citrus.config.CitrusSpringConfig"/>
 </beans>
