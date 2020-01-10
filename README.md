@@ -2,6 +2,9 @@
 
 Automation project using citrus framework, see official documentation here https://citrusframework.org/docs/user-guide/
 
+1. Citrus Job reference (**citrusJob branch**)
+2. Citrus tutorial reference (**citrusTutorial branch**)
+
 - Possible Scenarios
 
   Negative scenarios
