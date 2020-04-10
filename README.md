@@ -1,11 +1,11 @@
 # Project using Citrus framework (Automation)
 
-Automation project using citrus framework, see official documentation here https://citrusframework.org/docs/user-guide/
+Automation project using citrus framework, you can see the official documentation here https://citrusframework.org/docs/user-guide/
 
 1. Citrus Job reference (**citrusJob branch**)
 2. Citrus tutorial reference (**citrustutorial branch**)
 
-- Possible Scenarios
+- Scenarios
 
   Negative scenarios
     - Special characters
@@ -16,9 +16,11 @@ Automation project using citrus framework, see official documentation here https
     - Numbers
     - String
     - Two words
+    - Business
     
   Positive scenarios
     - Valid scenarios
+    - Business
   
   Alternative scenarios
-    - It's another valid scenario, an alternative for happy path.
+    - Alternative scenarios for happy path.
